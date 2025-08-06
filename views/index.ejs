@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Agenda</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+        <h1>Agenda</h1>
+        <nav class="navbar">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="#">Login</a></li>
+                <li><a href="#">SignUp</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="main-container">
+        <div class="options-container">
+            <button class="add-button">Add Contact</button>
+            <div class="search-container">
+                <i>Search Icon</i>
+                <input type="text" id="search" placeholder="Search...">
+            </div>
+            <div class="sort-container">
+                <i>Sort</i>                
+
+            </div>
+        </div>
+
+        <table class="contact-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% contacts.forEach((contact, index) => { %>
+                    <tr>
+                        <td><%= contact.name %></td>
+                        <td><%= contact.email %></td>
+                        <td><%= contact.phone %></td>
+                        <td>
+                            <button class="edit-button">Edit</button>
+                            <button class="delete-button" data-index="<%= index %>">Delete</button>
+                        </td>
+                    </tr>
+                <% }) %>
+
+            </tbody>
+        </table>
+        
+    </div>
+
+    <div class="pop-up-container">
+        <div class="pop-up">
+            <h2>Add New Contact</h2>
+            <form id="contact-form" action="/add" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <button type="submit">Save</button>
+                <button type="button" id="cancel-btn">Cancel</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="edit-pop-up-container">
+        <div class="edit-pop-up">
+            <h2>Edit Contact</h2>
+            <form id="edit-contact-form" action="/edit" method="POST">
+                <input type="hidden" id="edit-index" name="index">
+                <label for="edit-name">Name:</label>
+                <input type="text" id="edit-name" name="name" required>
+
+                <label for="edit-email">Email:</label>
+                <input type="email" id="edit-email" name="email" required>
+
+                <label for="edit-phone">Phone:</label>
+                <input type="tel" id="edit-phone" name="phone" required>
+
+                <button type="submit" id="update-btn">Update</button>
+                <button type="button" id="cancel-edit-btn">Cancel</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Agenda. All rights reserved. Developed by: <a href="https://github.com/LuizNazareth10">LuizNazareth</a></p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/js/main.js" defer></script>
+
+</body>
+</html>

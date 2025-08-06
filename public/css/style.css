@@ -1,0 +1,309 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Raleway', sans-serif;
+    background-color: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* <-- Isso centraliza horizontalmente o header */
+    min-height: 100vh;
+    background: url('../../img/background1.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+header{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    /* fazer uma transição de background color de lilas claro para branco */
+    background: linear-gradient(135deg, #3498db, #9b59b6);
+    color: black;
+    padding: 10px 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin:30px;
+    border-radius: 30px;
+    max-width: 800px;
+    width: 100%;
+}
+
+header .navbar ul{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+header .navbar ul li a{
+    text-decoration: none;
+    color: black;
+    transition: color 0.3s ease;
+}
+header .navbar ul li a:hover{
+    color: white;
+}
+.main-container{
+    max-width: 1100px;
+    /* min-width: 400px; */
+    width: 100%;
+    background:linear-gradient(135deg, #3498db, #9b59b6);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.options-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.options-container button{
+    background: linear-gradient(135deg, #3498db, #9b59b6);
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin: 0 10px;
+}
+.options-container button:hover{
+    background: linear-gradient(135deg, #9b59b6, #3498db);
+    color: white;
+}
+
+.search-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+}
+.search-container input{
+    padding: 10px;
+    border-radius: 15px;
+    border: 1px solid #ccc;
+    width: 300px;
+    font-size: 16px;
+    margin:0 10px;
+}
+
+/* .search-container i{
+    color: #3498db;
+    font-size: 20px;
+} */
+
+.contact-table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background:linear-gradient(135deg, #fff, #edd);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+}
+
+.contact-table th, .contact-table td{
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.contact-table th{
+    background-color: #9b59b6;
+    /* background: linear-gradient(135deg, #3498db, #9b59b6); */
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+    text-align: center;
+    /* border-radius: 14px; */
+}
+.contact-table tr:hover{
+    background-color: #f1f1f1;
+}
+
+.contact-table td:last-child{
+    text-align: center;
+}
+.contact-table td button{
+    background: linear-gradient(135deg, #3498db, #9b59b6);
+    color: #000;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin: 0 10px;
+}
+.contact-table td button:hover{
+    background: linear-gradient(135deg, #9b59b6, #3498db);
+    color: white;
+}
+
+.pop-up-container, .edit-pop-up-container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    display: none;
+}
+
+.pop-up, .edit-pop-up{
+    background: linear-gradient(135deg, #3498db, #9b59b6);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 300px;
+    width: 100%;
+    /* position: relative; */
+}
+
+.pop-up h2, .edit-pop-up h2{
+    margin-bottom: 20px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.pop-up form, .edit-pop-up form{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.pop-up form label, .edit-pop-up form label{
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.pop-up form input, .edit-pop-up form input{
+    padding: 10px;
+    border-radius: 15px;
+    border: 1px solid #ccc;
+    width: 100%;
+    font-size: 16px;
+}
+
+.pop-up form button, .edit-pop-up form button{
+    background: linear-gradient(135deg, #3498db, #9b59b6);
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+.pop-up form button:hover, .edit-pop-up form button:hover{
+    background: linear-gradient(135deg, #9b59b6, #3498db);
+    color: white;
+}
+
+.edit-pop-up-container{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.edit-pop-up{
+    background: linear-gradient(135deg, #3498db, #9b59b6);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 300px;
+    width: 100%;
+}
+
+.edit-pop-up h2{
+    margin-bottom: 20px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.edit-pop-up form{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.edit-pop-up form label{
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+.edit-pop-up form input{
+    padding: 10px;
+    border-radius: 15px;
+    border: 1px solid #ccc;
+    width: 100%;
+    font-size: 16px;
+}
+.edit-pop-up form button{
+    background: linear-gradient(135deg, #3498db, #9b59b6);
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+.edit-pop-up form button:hover{
+    background: linear-gradient(135deg, #9b59b6, #3498db);
+    color: white;
+}
+.edit-pop-up form .close{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+}
+.edit-pop-up form .close:hover{
+    color: #f1c40f;
+}
+.edit-pop-up form .close:active{
+    color: #e67e22;
+}
+.edit-pop-up form .close:focus{
+    outline: none;
+}

@@ -1,0 +1,34 @@
+{
+  "contacts": [
+    {
+      "name": "Jane Smith",
+      "phone": "987-654-3210",
+      "email": "FjL4y@example.com"
+    },
+    {
+      "name": "Bob Brown",
+      "email": "iKo8w@example.com",
+      "phone": "444-444-4445"
+    },
+    {
+      "name": "Luiz Gustavo Nazareth",
+      "email": "luizgustavonazareth4@gmail.com",
+      "phone": "32991129300"
+    },
+    {
+      "name": "Mara",
+      "email": "aluno@ufjf.br",
+      "phone": "3256467676"
+    },
+    {
+      "name": "oi",
+      "email": "oi@gmail.com",
+      "phone": "3290318041"
+    },
+    {
+      "name": "legal",
+      "email": "l@gmail.com",
+      "phone": "3298976875"
+    }
+  ]
+}
